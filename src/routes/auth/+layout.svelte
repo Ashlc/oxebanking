@@ -37,7 +37,7 @@
 			>
 		</div>
 	</div>
-	<div class="h-full w-full p-1 pl-0">
+	<div class="h-full w-full p-3 pl-0">
 		<slot />
 	</div>
 </div>
