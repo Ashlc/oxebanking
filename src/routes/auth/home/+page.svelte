@@ -68,7 +68,7 @@
 
 </script>
 
-<Layout breadcrumbItems={['Início']} startIcon="ic:outline-explore">
+<Layout root="Início" startIcon="ic:outline-explore">
 	<div class="flex flex-row gap-6">
 		<div class="flex basis-1/2 flex-col gap-6">
 			<Container header="Saldo" icon="ic:outline-account-balance-wallet">

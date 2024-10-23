@@ -42,5 +42,5 @@
 			<DropdownItem href="/logout">Sair</DropdownItem>
 		</Dropdown>
 	</div>
-	<div class="flex h-full w-full flex-col gap-4 bg-white px-6 p-6 overflow-scroll"><slot /></div>
+	<div class="flex h-full w-full flex-col gap-4 bg-white p-6 overflow-scroll"><slot /></div>
 </div>
