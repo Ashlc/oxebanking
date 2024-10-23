@@ -29,10 +29,10 @@
 			</div>
 		</div>
 		<div class="flex w-full flex-col items-center gap-4 border-t pt-6">
-			<SidebarButton href="/auth/help"
+			<SidebarButton href="/auth/help" active={$active === 'help'}
 				><Icon icon="ic:outline-support" height="20" class="mr-2" /> Central de Ajuda</SidebarButton
 			>
-			<SidebarButton href="/auth/settings"
+			<SidebarButton href="/auth/settings" active={$active === 'settings'}
 				><Icon icon="ic:outline-settings" height="20" class="mr-2" /> Configurações</SidebarButton
 			>
 		</div>
