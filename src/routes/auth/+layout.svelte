@@ -3,7 +3,7 @@
 	import Icon from '@iconify/svelte';
 	import { derived } from 'svelte/store';
 	import OxebankingLogo from '../../components/OxebankingLogo.svelte';
-	import SidebarButton from './components/SidebarButton.svelte';
+	import SidebarButton from '../../components/SidebarButton.svelte';
 
 	let active = derived(page, ($page) => $page.url.pathname.split('/')[2]);
 	console.log(active);
@@ -20,7 +20,7 @@
 				<SidebarButton active={$active === 'transactions'} href="/auth/transactions"
 					><Icon icon="ic:outline-attach-money" height="20" class="mr-2" /> Transações</SidebarButton
 				>
-				<SidebarButton active={$active === 'investments'} href="/auth/investments"
+				<SidebarButton active={$active === 'invest'} href="/auth/invest"
 					><Icon icon="ic:outline-trending-up" height="20" class="mr-2" /> Investimentos</SidebarButton
 				>
 				<SidebarButton active={$active === 'loans'} href="/auth/loans"

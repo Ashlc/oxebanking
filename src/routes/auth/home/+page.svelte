@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { Badge, Button } from 'flowbite-svelte';
-	import Container from '../components/Container.svelte';
-	import Layout from '../components/Layout.svelte';
+	import Container from '../../../components/Container.svelte';
+	import Layout from '../../../components/Layout.svelte';
 	import LatestTransactions from './LatestTransactions.svelte';
 
 	let visible = true;

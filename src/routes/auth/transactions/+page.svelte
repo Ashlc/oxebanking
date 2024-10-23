@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { Button, ButtonGroup } from 'flowbite-svelte';
-	import Layout from '../components/Layout.svelte';
+	import Layout from '../../../components/Layout.svelte';
 	import LatestTransactions from '../home/LatestTransactions.svelte';
 	import AccountTab from './AccountTab.svelte';
 	import PixTab from './PixTab.svelte';
