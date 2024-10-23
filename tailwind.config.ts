@@ -2,7 +2,10 @@ import flowbitePlugin from 'flowbite/plugin';
 import type { Config } from 'tailwindcss';
 
 export default {
-	content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'],
+	content: [
+		'./src/**/*.{html,js,svelte,ts}',
+		'./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'
+	],
 	darkMode: 'selector',
 	theme: {
 		extend: {
@@ -34,7 +37,7 @@ export default {
 					200: '#FFF9F3',
 					300: '#F2EBE5',
 					400: '#ECDBCA',
-					500: '#D4D4D4',
+					500: '#E8D2BC',
 					600: '#A6A6A6',
 					700: '#787878',
 					800: '#4A4A4A',
