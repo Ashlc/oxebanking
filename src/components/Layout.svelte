@@ -24,13 +24,12 @@
 			aria-label="Dropdown perfil"
 		>
 			<div
-				class="flex aspect-square h-10 flex-col items-center justify-center rounded-lg bg-secondary-300 text-white"
+				class="flex aspect-square h-10 flex-col items-center justify-center rounded-lg bg-primary-700 text-white"
 			>
 				{user.name
 					.split(' ')
 					.map((name) => name[0])
-					.join('')
-                }
+					.join('')}
 			</div>
 			<div class="mr-4 flex flex-col items-start">
 				<p class="font-semibold">{user.name}</p>
@@ -42,5 +41,5 @@
 			<DropdownItem href="/logout">Sair</DropdownItem>
 		</Dropdown>
 	</div>
-	<div class="flex h-full w-full flex-col gap-4 bg-white p-6 overflow-scroll"><slot /></div>
+	<div class="flex h-full w-full flex-col gap-4 overflow-scroll bg-white p-6"><slot /></div>
 </div>
