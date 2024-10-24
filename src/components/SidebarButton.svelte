@@ -6,9 +6,9 @@
 </script>
 
 <Button
-	color="light"
+	color="alternative"
 	on:click={() => goto(href)}
-	class={`${active ? 'border bg-white text-primary-700 shadow-md shadow-secondary-200/20' : 'border-none bg-transparent'} w-full justify-start transition-all hover:bg-primary-400`}
+	class={`${active ? 'border bg-white text-primary-700 shadow-md shadow-neutral-300' : 'border-none bg-transparent'} w-full justify-start transition-all hover:bg-primary-400 hover:text-primary-900`}
 >
 	<slot />
 </Button>

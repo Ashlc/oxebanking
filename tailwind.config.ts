@@ -15,10 +15,10 @@ export default {
 			colors: {
 				primary: {
 					100: '#E4FFDB',
-					200: '#BEE6B1',
-					300: '#addb9e',
-					400: '#96c985',
-					500: '#BEE6B1',
+					200: '#ddf7d4',
+					300: '#BEE6B1',
+					400: '#addb9e',
+					500: '#8cd175',
 					600: '#78BC61',
 					700: '#69AC53', // Primary Flowbite button
 					800: '#3e6931',

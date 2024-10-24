@@ -48,20 +48,20 @@
 	// Define an object to hold styles and values based on operation
 	const styles = {
 		in: {
-			bgColor: 'bg-primary-400',
-			textColor: 'text-primary-500',
+			bgColor: 'bg-primary-200',
+			textColor: 'text-primary-700',
 			word: 'de',
 			sign: '+'
 		},
 		out: {
 			bgColor: 'bg-red-100',
-			textColor: 'text-red-600',
+			textColor: 'text-red-500',
 			word: 'para',
 			sign: '-'
 		},
 		card: {
-			bgColor: 'bg-gray-100',
-			textColor: 'text-gray-500',
+			bgColor: 'bg-slate-100',
+			textColor: 'text-slate-500',
 			word: 'em',
 			sign: ''
 		}
@@ -92,7 +92,7 @@
 					</div>
 					<div>
 						<div class="flex flex-row gap-1">
-							<p class={`text-sm font-bold text-secondary-500 ${styles[t.operation].textColor}`}>
+							<p class={`text-sm font-bold ${styles[t.operation].textColor}`}>
 								{`${styles[t.operation].sign}${t.value}`}
 							</p>
 							<p class="text-sm text-secondary-200">{styles[t.operation].word}</p>
