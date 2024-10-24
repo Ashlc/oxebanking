@@ -45,7 +45,7 @@ export default {
 				}
 			},
 			borderColor: {
-				DEFAULT: '#D4D4D4'
+				DEFAULT: '#e5e7eb'
 			}
 		}
 	},
