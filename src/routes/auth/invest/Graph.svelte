@@ -23,7 +23,7 @@
 
 	const styles = {
 		positive: {
-			color: 'text-secondary-500',
+			color: 'text-secondary-400',
 			icon: 'material-symbols:arrow-upward'
 		},
 		negative: {
@@ -36,7 +36,7 @@
 
 	// Function to shuffle an array
 	function shuffleArray(array: number[]): number[] {
-		for (let i = 10 - 1; i > 0; i--) {
+		for (let i = 11 - 1; i > 0; i--) {
 			const j = Math.floor(Math.random() * (i + 1));
 			[array[i], array[j]] = [array[j], array[i]];
 		}
@@ -71,8 +71,16 @@
 					type: 'line',
 					smooth: true,
 					areaStyle: {
-						color: '#BEE6B1',
-						opacity: 0.5
+						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+							{
+								offset: 0,
+								color: '#BEE6B1'
+							},
+							{
+								offset: 1,
+								color: '#FFFFFF'
+							}
+						])
 					}
 				}
 			],
@@ -86,15 +94,15 @@
 	});
 </script>
 
-<div class="flex w-full flex-col rounded-lg border p-4">
+<div class="flex h-full w-full flex-col rounded-lg border p-4">
 	<div class="flex flex-row gap-2">
 		<p class="text-lg font-semibold">Visão geral</p>
-		<Badge large class={`gap-1 border bg-white`} rounded>
+		<Badge class={`gap-1 border bg-white`} rounded>
 			<div class={`flex flex-row items-center gap-[2px] ${styles[rentability.style].color}`}>
 				<p class="font-semibold">{formattedRentability}</p>
 				<Icon icon={styles[rentability.style].icon} class="mb-[1px]" />
 			</div>
 		</Badge>
 	</div>
-	<div bind:this={chartContainer} class="h-[400px] grow"></div>
+	<div bind:this={chartContainer} class="grow"></div>
 </div>
