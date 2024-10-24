@@ -17,7 +17,7 @@
 		>
 			<img src={pixImg} alt="QR Code" class="w-full" />
 		</div>
-		<Button color="light" class="w-full gap-2">
+		<Button color="alternative" class="w-full gap-2">
 			<Icon icon="ph:numpad" />
 			Personalizar valor
 		</Button>
@@ -44,18 +44,8 @@
 			<p class="text-sm font-medium">Compartilhar</p>
 		</div>
 		<div class="flex flex-row gap-2">
-			<Button
-				color="light"
-				class="w-1/2 transition-all hover:bg-primary-400 hover:text-primary-500"
-			>
-				QR Code
-			</Button>
-			<Button
-				color="light"
-				class="w-1/2 transition-all hover:bg-primary-400 hover:text-primary-500"
-			>
-				Copia e Cola
-			</Button>
+			<Button color="primary" class="basis-1/2">QR Code</Button>
+			<Button color="primary" class="basis-1/2">Copia e Cola</Button>
 		</div>
 	</div>
 </div>

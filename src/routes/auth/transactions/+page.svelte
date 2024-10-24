@@ -79,15 +79,15 @@
 			<div class="flex h-full flex-col items-center gap-6 rounded-lg border p-4">
 				<ButtonGroup class="w-full *:!ring-primary-500">
 					<Button
-						color="light"
-						class={`w-1/2 transition-all hover:bg-primary-400 hover:text-primary-500 ${selectedTab === 'account' ? activeStyle : ''}`}
+						color={selectedTab === 'account' ? 'primary' : 'light'}
+						class="grow"
 						on:click={() => (selectedTab = 'account')}
 					>
 						Conta
 					</Button>
 					<Button
-						color="light"
-						class={`w-1/2 transition-all hover:bg-primary-400 hover:text-primary-500 ${selectedTab === 'pix' ? activeStyle : ''}`}
+						color={selectedTab === 'pix' ? 'primary' : 'light'}
+						class="grow"
 						on:click={() => (selectedTab = 'pix')}
 					>
 						Pix

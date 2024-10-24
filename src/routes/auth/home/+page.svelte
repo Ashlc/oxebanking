@@ -103,7 +103,7 @@
 					<p class="w-full text-4xl font-bold text-secondary-500">R$ 140,37</p>
 					<div class="flex flex-row gap-3">
 						<p class="text-secondary-200">Vence 14/11</p>
-						<Badge class="gap-2 border border-primary-500 bg-primary-400 text-primary-500">
+						<Badge color="primary" class="gap-2" border>
 							<Icon icon="material-symbols:check" />
 							Débito automático ativo
 						</Badge>

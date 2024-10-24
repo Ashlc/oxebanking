@@ -39,9 +39,7 @@
 			<p>{localAccount.bank}</p>
 		</div>
 	</div>
-	<Button class="bg-primary-700 text-white transition-all hover:bg-primary-500" on:click={share}
-		>Compartilhar</Button
-	>
+	<Button color="primary" on:click={share}>Compartilhar</Button>
 </div>
 
 <div class="flex w-full flex-col gap-6 rounded-md border p-4">
@@ -67,7 +65,5 @@
 			<p>{globalAccount.bank}</p>
 		</div>
 	</div>
-	<Button class="bg-primary-700 text-white transition-all hover:bg-primary-500" on:click={share}
-		>Compartilhar</Button
-	>
+	<Button color="primary" on:click={share}>Compartilhar</Button>
 </div>
