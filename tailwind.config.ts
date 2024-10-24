@@ -9,6 +9,9 @@ export default {
 	darkMode: 'selector',
 	theme: {
 		extend: {
+			textColor: {
+				DEFAULT: '#332B2B'
+			},
 			colors: {
 				primary: {
 					100: '#E4FFDB',
@@ -23,8 +26,8 @@ export default {
 				},
 				secondary: {
 					100: '#A17C6B',
-					200: '#6A5D5D',
-					300: '#4E4444',
+					200: '#78625D',
+					300: '#53443F',
 					400: '#332B2B',
 					500: '#211E1E',
 					600: '#181515',
@@ -36,7 +39,7 @@ export default {
 					100: '#FFFDFA',
 					200: '#FFF9F3',
 					300: '#F2EBE5',
-					400: '#ECDBCA',
+					400: '#F2E4D5',
 					500: '#E8D2BC',
 					600: '#A6A6A6',
 					700: '#787878',
