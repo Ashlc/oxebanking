@@ -17,7 +17,7 @@
 >
 	<div class="flex flex-row items-center gap-2">
 		<div
-			class="flex aspect-square h-10 flex-col items-center justify-center rounded-lg bg-secondary-200 text-secondary-600"
+			class="flex aspect-square h-10 flex-col items-center justify-center rounded-lg bg-primary-500 text-primary-600"
 		>
 			<Icon icon={investmentType.icon} height={20} />
 		</div>

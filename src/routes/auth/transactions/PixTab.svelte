@@ -8,7 +8,7 @@
 
 <div class="flex w-full flex-col items-center gap-8">
 	<div class="flex w-full flex-col gap-3">
-		<div class="text-primary-3200 flex w-full flex-row items-center gap-2">
+		<div class="text-secondary-3200 flex w-full flex-row items-center gap-2">
 			<Icon icon="material-symbols:qr-code" />
 			<p class="text-sm font-medium">QR Code</p>
 		</div>
@@ -23,14 +23,14 @@
 		</Button>
 	</div>
 	<div class="flex w-full flex-col gap-3">
-		<div class="text-primary-3200 flex w-full flex-row items-center gap-2">
+		<div class="text-secondary-3200 flex w-full flex-row items-center gap-2">
 			<Icon icon="material-symbols:key-outline" />
 			<p class="text-sm font-medium">Chaves</p>
 		</div>
 		<div class="flex w-full flex-col gap-2">
 			{#each keys as key}
 				<div class="flex flex-row items-center gap-2">
-					<Button color="alternative" class="aspect-square border-0 p-1 text-secondary-400">
+					<Button color="alternative" class="aspect-square border-0 p-1 text-primary-700">
 						<Icon icon="material-symbols:content-copy-outline" height="18" />
 					</Button>
 					<p>{key}</p>
@@ -39,20 +39,20 @@
 		</div>
 	</div>
 	<div class="flex w-full flex-col gap-3">
-		<div class="text-primary-3200 flex w-full flex-row items-center gap-2">
+		<div class="text-secondary-3200 flex w-full flex-row items-center gap-2">
 			<Icon icon="material-symbols:share" />
 			<p class="text-sm font-medium">Compartilhar</p>
 		</div>
 		<div class="flex flex-row gap-2">
 			<Button
 				color="light"
-				class="w-1/2 transition-all hover:bg-secondary-100 hover:text-secondary-500"
+				class="w-1/2 transition-all hover:bg-primary-400 hover:text-primary-500"
 			>
 				QR Code
 			</Button>
 			<Button
 				color="light"
-				class="w-1/2 transition-all hover:bg-secondary-100 hover:text-secondary-500"
+				class="w-1/2 transition-all hover:bg-primary-400 hover:text-primary-500"
 			>
 				Copia e Cola
 			</Button>

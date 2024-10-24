@@ -7,7 +7,7 @@ export type InvestmentType = 'cdb' | 'lcilca' | 'funds' | 'directTreasury';
 
 export const rentabilityStyles = {
 	positive: {
-		color: 'text-secondary-400',
+		color: 'text-primary-700',
 		icon: 'material-symbols:arrow-upward'
 	},
 	negative: {
@@ -99,5 +99,3 @@ export const investmentTypes = {
 		]
 	}
 };
-
-export const activeButton = 'bg-secondary-300 text-white hover:bg-secondary-400';

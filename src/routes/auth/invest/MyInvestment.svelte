@@ -15,7 +15,7 @@
 	};
 
 	const styles = {
-		color: 'text-secondary-400',
+		color: 'text-primary-700',
 		icon: 'material-symbols:arrow-upward'
 	};
 
@@ -24,9 +24,9 @@
 
 <div class="flex grow flex-col gap-2 rounded-xl border">
 	<div class="border-b p-4">
-		<p class="font-semibold text-primary-400">{investment.name}</p>
+		<p class="font-semibold text-secondary-400">{investment.name}</p>
 	</div>
-	<div class="flex flex-col gap-2 p-4 text-primary-300">
+	<div class="flex flex-col gap-2 p-4 text-secondary-300">
 		<div class="flex flex-row items-center justify-between">
 			<p class="font-medium">Valor investido</p>
 			<div class="flex flex-row gap-2">
@@ -55,6 +55,6 @@
 		</div>
 	</div>
 	<div class="border-t p-4">
-		<Button color="primary" class="w-full bg-secondary-400">Ver detalhes</Button>
+		<Button color="primary" class="w-full bg-primary-700">Ver detalhes</Button>
 	</div>
 </div>

@@ -23,7 +23,7 @@
 
 	const styles = {
 		positive: {
-			color: 'text-secondary-400',
+			color: 'text-primary-700',
 			icon: 'material-symbols:arrow-upward'
 		},
 		negative: {

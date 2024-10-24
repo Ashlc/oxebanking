@@ -10,13 +10,13 @@
 </script>
 
 <Modal bind:open on:close={onClose} autoclose outsideclose bodyClass="p-0">
-	<Section classNames="gap-4 border-b p-6 text-lg font-semibold text-primary-400">
+	<Section classNames="gap-4 border-b p-6 text-lg font-semibold text-secondary-400">
 		{#if type}
 			<div class="flex flex-row items-center gap-2">
 				<Icon icon={investmentTypes[type].icon} height={24} />
 				<p>{`Escolha um tipo de ${investmentTypes[type].name}`}</p>
 			</div>
-			<p class="justify text-base font-normal tracking-tight text-primary-200">
+			<p class="justify text-base font-normal tracking-tight text-secondary-200">
 				{investmentTypes[type].description}
 			</p>
 		{/if}
@@ -26,11 +26,11 @@
 			{#each investmentTypes[type].options as option}
 				<div class="flex flex-row items-center justify-between p-4">
 					<div class="flex flex-col">
-						<p class="text-lg font-bold text-primary-300">{option.title}</p>
-						<p class="text-primary-100">
+						<p class="text-lg font-bold text-secondary-300">{option.title}</p>
+						<p class="text-secondary-100">
 							Rende <span class="font-bold">{option.rentability}</span> do CDI
 						</p>
-						<p class="text-sm font-normal text-primary-100">{option.period}</p>
+						<p class="text-sm font-normal text-secondary-100">{option.period}</p>
 					</div>
 					<Radio value={option.title} name="investment-type" />
 				</div>

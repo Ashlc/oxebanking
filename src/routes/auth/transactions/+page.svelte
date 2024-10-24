@@ -44,7 +44,7 @@
 	];
 
 	let selectedTab = 'account';
-	const activeStyle = 'bg-secondary-400 text-white';
+	const activeStyle = 'bg-primary-700 text-white';
 </script>
 
 <Layout root="Início" startIcon="ic:outline-explore" breadcrumbItems={['Transações']}>
@@ -53,7 +53,7 @@
 			<div class="flex flex-row items-center gap-3">
 				<Icon icon="ic:outline-account-balance-wallet" height="20" />
 				{#if visible}
-					<p class="w-1/5 text-2xl font-bold text-primary-500">{formattedBalance}</p>
+					<p class="w-1/5 text-2xl font-bold text-secondary-500">{formattedBalance}</p>
 				{:else}
 					<div class="h-8 w-1/5 rounded-lg bg-neutral-200" />
 				{/if}
@@ -65,7 +65,7 @@
 				<div class="flex flex-row gap-6">
 					{#each actions as action}
 						<button
-							class="flex aspect-square w-1/4 flex-col items-center justify-center gap-2 rounded-lg border bg-neutral-200 transition-all hover:bg-neutral-300 focus:ring focus:!ring-primary-100 active:bg-neutral-400"
+							class="flex aspect-square w-1/4 flex-col items-center justify-center gap-2 rounded-lg border bg-neutral-200 transition-all hover:bg-neutral-300 focus:ring focus:!ring-secondary-100 active:bg-neutral-400"
 						>
 							<Icon icon={action.icon} height="32" />
 							{action.label}
@@ -77,17 +77,17 @@
 		</div>
 		<div class="flex basis-1/4 flex-col">
 			<div class="flex h-full flex-col items-center gap-6 rounded-lg border p-4">
-				<ButtonGroup class="w-full *:!ring-secondary-200">
+				<ButtonGroup class="w-full *:!ring-primary-500">
 					<Button
 						color="light"
-						class={`w-1/2 transition-all hover:bg-secondary-100 hover:text-secondary-500 ${selectedTab === 'account' ? activeStyle : ''}`}
+						class={`w-1/2 transition-all hover:bg-primary-400 hover:text-primary-500 ${selectedTab === 'account' ? activeStyle : ''}`}
 						on:click={() => (selectedTab = 'account')}
 					>
 						Conta
 					</Button>
 					<Button
 						color="light"
-						class={`w-1/2 transition-all hover:bg-secondary-100 hover:text-secondary-500 ${selectedTab === 'pix' ? activeStyle : ''}`}
+						class={`w-1/2 transition-all hover:bg-primary-400 hover:text-primary-500 ${selectedTab === 'pix' ? activeStyle : ''}`}
 						on:click={() => (selectedTab = 'pix')}
 					>
 						Pix

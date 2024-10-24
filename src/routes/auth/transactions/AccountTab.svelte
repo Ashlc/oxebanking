@@ -27,19 +27,19 @@
 	</div>
 	<div class="flex flex-col gap-3">
 		<div>
-			<p class="text-sm font-medium text-primary-100">Número da conta</p>
+			<p class="text-sm font-medium text-secondary-100">Número da conta</p>
 			<p>{localAccount.number}</p>
 		</div>
 		<div>
-			<p class="text-sm font-medium text-primary-100">Agência</p>
+			<p class="text-sm font-medium text-secondary-100">Agência</p>
 			<p>{localAccount.agency}</p>
 		</div>
 		<div>
-			<p class="text-sm font-medium text-primary-100">Banco</p>
+			<p class="text-sm font-medium text-secondary-100">Banco</p>
 			<p>{localAccount.bank}</p>
 		</div>
 	</div>
-	<Button class="bg-secondary-400 text-white transition-all hover:bg-secondary-500" on:click={share}
+	<Button class="bg-primary-700 text-white transition-all hover:bg-primary-500" on:click={share}
 		>Compartilhar</Button
 	>
 </div>
@@ -51,23 +51,23 @@
 	</div>
 	<div class="flex flex-col gap-3">
 		<div>
-			<p class="text-sm font-medium text-primary-100">Account Number</p>
+			<p class="text-sm font-medium text-secondary-100">Account Number</p>
 			<p>{globalAccount.number}</p>
 		</div>
 		<div>
-			<p class="text-sm font-medium text-primary-100">ACH Routing Number</p>
+			<p class="text-sm font-medium text-secondary-100">ACH Routing Number</p>
 			<p>{globalAccount.ach}</p>
 		</div>
 		<div>
-			<p class="text-sm font-medium text-primary-100">Wire Routing Number</p>
+			<p class="text-sm font-medium text-secondary-100">Wire Routing Number</p>
 			<p>{globalAccount.wire}</p>
 		</div>
 		<div>
-			<p class="text-sm font-medium text-primary-100">Bank Name</p>
+			<p class="text-sm font-medium text-secondary-100">Bank Name</p>
 			<p>{globalAccount.bank}</p>
 		</div>
 	</div>
-	<Button class="bg-secondary-400 text-white transition-all hover:bg-secondary-500" on:click={share}
+	<Button class="bg-primary-700 text-white transition-all hover:bg-primary-500" on:click={share}
 		>Compartilhar</Button
 	>
 </div>
