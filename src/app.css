@@ -21,3 +21,9 @@
 	transform: translateZ(0);
 	will-change: transform;
 }
+
+.image-1 {
+	background-image: url('./assets/farolmaceio.png');
+	background-size: cover;
+	background-position: 0% 50%;
+}
