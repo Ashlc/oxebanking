@@ -1,10 +1,14 @@
 <script lang="ts">
 	import Layout from '../../../components/Layout.svelte';
+	import Consortium from './Consortium.svelte';
+	import Exchange from './Exchange.svelte';
+	import Insurance from './Insurance.svelte';
 </script>
 
 <Layout root="Início" startIcon="ic:outline-explore" breadcrumbItems={['Serviços']}>
-	<div class="flex flex-row gap-6">
-		<div class="flex basis-3/4 flex-col gap-12"></div>
-		<div class="flex basis-1/4 flex-col"></div>
-	</div></Layout
->
+	<div class="flex flex-col gap-6">
+		<Exchange />
+		<Insurance />
+		<Consortium />
+	</div>
+</Layout>
