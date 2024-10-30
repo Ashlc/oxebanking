@@ -34,7 +34,7 @@
 	];
 </script>
 
-<Section gap={8}>
+<Section gap={4}>
 	<div class="flex flex-row items-center gap-2">
 		<Icon icon="ic:baseline-currency-exchange" height="24" />
 		<h1 class="text-xl font-semibold">Câmbio</h1>
