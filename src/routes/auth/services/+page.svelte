@@ -6,7 +6,7 @@
 </script>
 
 <Layout root="Início" startIcon="ic:outline-explore" breadcrumbItems={['Serviços']}>
-	<div class="flex flex-col gap-6">
+	<div class="flex flex-col gap-8">
 		<Exchange />
 		<Insurance />
 		<Consortium />

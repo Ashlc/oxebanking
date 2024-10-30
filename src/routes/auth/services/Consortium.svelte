@@ -3,7 +3,7 @@
 	import Section from '../../../components/Section.svelte';
 </script>
 
-<Section>
+<Section gap={8}>
 	<div class="flex flex-row items-center gap-2">
 		<Icon icon="material-symbols:key-outline" height="24" />
 		<h1 class="text-xl font-semibold">Consórcio</h1>
