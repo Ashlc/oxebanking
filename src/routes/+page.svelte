@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { Button, Input, Label } from 'flowbite-svelte';
 	import OxebankingLogo from '../components/OxebankingLogo.svelte';
 
@@ -6,7 +7,17 @@
 
 	function handleSubmit(event: SubmitEvent) {
 		event.preventDefault();
-		console.log(loginForm.cpf.value, loginForm.password.value);
+		console.log(loginForm.cpf, loginForm.password);
+		loginForm.reset();
+		goto('/auth/home');
+	}
+
+	let forgotPasswordForm: HTMLFormElement;
+
+	function handleForgotPasswordSubmit(event: SubmitEvent) {
+		event.preventDefault();
+		console.log(forgotPasswordForm.cpf);
+		forgotPasswordForm.reset();
 	}
 
 	function validateCpf(event: FocusEvent) {
@@ -39,11 +50,16 @@
 						<Label>Senha</Label>
 						<Input type="password" required />
 					</div>
-					<button
-						on:click={() => (forgotPassword = true)}
-						class="text-right text-sm text-secondary-100 transition-all hover:underline"
-						>Esqueci minha senha</button
-					>
+					<div class="flex justify-end">
+						<Button
+							color="light"
+							on:click={() => (forgotPassword = true)}
+							type="button"
+							size="xs"
+							class="h-fit w-fit border-none px-3 py-1 text-sm text-secondary-100 transition-all hover:underline"
+							aria-label="Esqueci minha senha">Esqueci minha senha</Button
+						>
+					</div>
 					<Button class="mt-4 w-full" type="submit" form="login-form">ENTRAR</Button>
 				</form>
 				<div class="flex w-1/2 flex-col items-center gap-2">
@@ -63,15 +79,17 @@
 				</div>
 				<form
 					class="flex w-1/2 flex-col gap-4"
-					id="login-form"
-					bind:this={loginForm}
-					on:submit={handleSubmit}
+					id="forgot-password-form"
+					bind:this={forgotPasswordForm}
+					on:submit={handleForgotPasswordSubmit}
 				>
 					<div>
 						<Label>CPF</Label>
 						<Input type="text" required minlength={11} maxlength={11} on:blur={validateCpf} />
 					</div>
-					<Button class="mt-4 w-full" type="submit" form="login-form">RECUPERAR SENHA</Button>
+					<Button class="mt-4 w-full" type="submit" form="forgot-password-form">
+						RECUPERAR SENHA
+					</Button>
 					<Button color="light" class="border-none" on:click={() => (forgotPassword = false)}
 						>VOLTAR</Button
 					>
