@@ -12,7 +12,7 @@
 </script>
 
 <button
-	class="animated-card flex basis-1/4 flex-col gap-4 rounded-xl border p-4 text-justify transition-all ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-neutral-500/30"
+	class="animated-card flex basis-1/4 flex-col gap-4 rounded-xl border p-4 text-justify transition-all ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-secondary-400/10"
 	on:click={onClick}
 >
 	<div class="flex flex-row items-center gap-2">
