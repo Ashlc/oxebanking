@@ -3,12 +3,13 @@
 	import { Button, ButtonGroup } from 'flowbite-svelte';
 	import Layout from '../../../components/Layout.svelte';
 	import LatestTransactions from '../home/LatestTransactions.svelte';
-	import AccountTab from './AccountTab.svelte';
-	import PixTab from './PixTab.svelte';
+	import AccountTab from './components/AccountTab.svelte';
+	import PixModal from './components/PixModal.svelte';
+	import PixTab from './components/PixTab.svelte';
 	let visible = true;
 	let visibleIcon = 'mdi:eye-off-outline';
 	let balance = 34245.23;
-
+	let openPixModal = false;
 	let formattedBalance = balance.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
 	const toggleVisibility = () => {
@@ -23,23 +24,28 @@
 	const actions = [
 		{
 			icon: 'material-symbols:send-money',
-			label: 'Pagar'
+			label: 'Pagar',
+			onClick: () => (openPixModal = true)
 		},
 		{
 			icon: 'material-symbols:place-item',
-			label: 'Depositar'
+			label: 'Depositar',
+			onClick: () => (openPixModal = true)
 		},
 		{
 			icon: 'material-symbols:calendar-clock-outline',
-			label: 'Agendar'
+			label: 'Agendar',
+			onClick: () => (openPixModal = true)
 		},
 		{
 			icon: 'mdi:mixer-settings',
-			label: 'Limites'
+			label: 'Limites',
+			onClick: () => (openPixModal = true)
 		},
 		{
 			icon: 'material-symbols:favorite-outline',
-			label: 'Favoritos'
+			label: 'Favoritos',
+			onClick: () => (openPixModal = true)
 		}
 	];
 
@@ -66,6 +72,7 @@
 					{#each actions as action}
 						<button
 							class="flex aspect-square w-1/4 flex-col items-center justify-center gap-2 rounded-lg border bg-neutral-200 transition-all hover:bg-neutral-300 focus:ring focus:!ring-secondary-100 active:bg-neutral-400"
+							on:click={action.onClick}
 						>
 							<Icon icon={action.icon} height="32" />
 							{action.label}
@@ -101,4 +108,5 @@
 			</div>
 		</div>
 	</div>
+	<PixModal openModal={openPixModal} onClose={() => (openPixModal = false)} />
 </Layout>

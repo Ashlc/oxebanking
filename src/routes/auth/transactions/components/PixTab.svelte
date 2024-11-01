@@ -1,7 +1,7 @@
 <script>
 	import Icon from '@iconify/svelte';
 	import { Button } from 'flowbite-svelte';
-	import pixImg from './../../../assets/qrcode.png';
+	import pixImg from './../../../../assets/qrcode.png';
 
 	const keys = ['mail@example.com', '99 99999-9999', '000.000.000-00'];
 </script>
