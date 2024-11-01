@@ -67,11 +67,12 @@
 							aria-label="Esqueci minha senha">Esqueci minha senha</Button
 						>
 					</div>
-					<Button class="mt-4 w-full" type="submit" form="login-form">ENTRAR</Button>
+					<Button size="lg" class="mt-4 w-full" type="submit" form="login-form">ENTRAR</Button>
 				</form>
 				<div class="flex w-1/2 flex-col items-center gap-2">
 					<p>Ôxe, tu não tem conta?</p>
 					<Button
+						size="lg"
 						class="w-full border-primary-500 text-primary-700"
 						color="light"
 						on:click={() => goto('/signup')}
