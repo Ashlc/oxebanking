@@ -64,7 +64,11 @@
 				</form>
 				<div class="flex w-1/2 flex-col items-center gap-2">
 					<p>Ôxe, tu não tem conta?</p>
-					<Button class="w-full border-primary-500 text-primary-700" color="light">
+					<Button
+						class="w-full border-primary-500 text-primary-700"
+						color="light"
+						on:click={() => goto('/signup')}
+					>
 						ABRA UMA CONTA OXE
 					</Button>
 				</div>
