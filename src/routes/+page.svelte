@@ -44,11 +44,18 @@
 				>
 					<div>
 						<Label>CPF</Label>
-						<Input type="text" required minlength={11} maxlength={11} on:blur={validateCpf} />
+						<Input
+							type="text"
+							required
+							minlength={11}
+							maxlength={11}
+							on:blur={validateCpf}
+							size="lg"
+						/>
 					</div>
 					<div>
 						<Label>Senha</Label>
-						<Input type="password" required />
+						<Input type="password" required size="lg" />
 					</div>
 					<div class="flex justify-end">
 						<Button
