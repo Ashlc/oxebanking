@@ -193,31 +193,75 @@ export const insurances: InsuranceType[] = [
 	}
 ];
 
-export const consortiums: ConsortiumType[] = [
-	{
-		image: 'https://www.proiectari.md/wp-content/uploads/2023/12/model-casa.jpg',
-		title: 'Imóveis',
-		price: 1999.9,
-		contracted: false
-	},
+export type ConsortiumType = {
+	image: string;
+	title: string;
+	description: string[];
+	price: number;
+	installments?: number;
+	contracted?: boolean;
+	contractDate?: string;
+};
+
+export const consortiumsMock: ConsortiumType[] = [
 	{
 		image:
 			'https://static.wixstatic.com/media/c87e0f_25b4e52bb309448aa56c8a59702c9d9d~mv2.jpg/v1/fill/w_568,h_244,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c87e0f_25b4e52bb309448aa56c8a59702c9d9d~mv2.jpg',
-		title: 'Carros',
-		price: 899.9,
-		contracted: false
+		title: 'Consórcio Automotivo',
+		description: [
+			'Compra de veículos novos e usados',
+			'Taxa de administração reduzida',
+			'Sem juros'
+		],
+		price: 20000,
+		installments: 60
 	},
 	{
-		image: 'https://i.pinimg.com/736x/b8/ae/3c/b8ae3ce3f202a25ed6cd98d62b498933.jpg',
-		title: 'Motos',
-		price: 499.9,
-		contracted: false
+		image: 'https://www.proiectari.md/wp-content/uploads/2023/12/model-casa.jpg',
+		title: 'Consórcio Imobiliário',
+		description: [
+			'Compra de imóveis residenciais ou comerciais',
+			'Possibilidade de lances para antecipação',
+			'Sem necessidade de entrada'
+		],
+		price: 150000,
+		installments: 180,
+		contractDate: '2023-04-15'
 	},
 	{
-		image: 'https://qive.com.br/storage/2024/04/professional-services.jpg',
-		title: 'Consórcio de serviços',
-		price: 299.9,
-		contracted: false
+		image:
+			'https://superbikefactory.co.uk/media/wysiwyg/httpssuperbikefactory.co.ukused-motorcyclesmake_8850_model_9370_4__5.jpg',
+		title: 'Consórcio de Motos',
+		description: [
+			'Aquisição de motos de qualquer cilindrada',
+			'Taxa de administração competitiva',
+			'Cobertura nacional'
+		],
+		price: 10000,
+		installments: 36
+	},
+	{
+		image:
+			'https://triider-prd-blog-files.s3.sa-east-1.amazonaws.com/wp-content/uploads/2018/03/28225119/prestacao-de-servico-onde-encontrar-bons-profissionais.jpg',
+		title: 'Consórcio de Serviços',
+		description: [
+			'Planejamento de viagens e eventos',
+			'Reformas e serviços de saúde',
+			'Sem cobrança de juros'
+		],
+		price: 5000,
+		installments: 24
+	},
+	{
+		image: 'https://marcaspelomundo.com.br/wp-content/uploads/2021/11/eletronicos.jpg',
+		title: 'Consórcio de Eletrônicos',
+		description: [
+			'Aquisição de eletrônicos e eletrodomésticos',
+			'Parcelamento sem juros',
+			'Entrega garantida após contemplação'
+		],
+		price: 3000,
+		installments: 18
 	}
 ];
 
@@ -225,18 +269,28 @@ export const myConsortiums: ConsortiumType[] = [
 	{
 		image:
 			'https://static.wixstatic.com/media/c87e0f_25b4e52bb309448aa56c8a59702c9d9d~mv2.jpg/v1/fill/w_568,h_244,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c87e0f_25b4e52bb309448aa56c8a59702c9d9d~mv2.jpg',
-		title: 'Carro',
+		title: 'Consórcio Automotivo',
 		price: 12547.16,
 		installments: 80,
 		contracted: true,
-		contractDate: '2021-01-01'
+		contractDate: '2021-01-01',
+		description: [
+			'Compra de veículos novos e usados',
+			'Taxa de administração reduzida',
+			'Sem juros'
+		]
 	},
 	{
 		image: 'https://www.proiectari.md/wp-content/uploads/2023/12/model-casa.jpg',
-		title: 'Imóvel',
+		title: 'Consórcio Imobiliário',
 		price: 12547.16,
 		installments: 80,
 		contracted: true,
-		contractDate: '2021-01-01'
+		contractDate: '2021-01-01',
+		description: [
+			'Compra de imóveis residenciais ou comerciais',
+			'Possibilidade de lances para antecipação',
+			'Sem necessidade de entrada'
+		]
 	}
 ];

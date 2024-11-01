@@ -5,9 +5,10 @@
 	export let header: string = '';
 	export let border = true;
 	export let padding = true;
+	export let className: string = '';
 </script>
 
-<div class={`flex flex-col gap-4 rounded-lg ${border ? 'border' : ''}`}>
+<div class={`flex flex-col gap-4 rounded-lg ${border ? 'border' : ''} ${className}`}>
 	<div class={`flex flex-row items-center gap-2 px-4 ${padding ? 'pt-4 ' : ''}`}>
 		{#if icon}
 			<Icon {icon} class="text-secondary-200" height="18" />

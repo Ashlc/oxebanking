@@ -4,7 +4,7 @@
 	import Section from '../../../components/Section.svelte';
 	import type { ConsortiumType } from '../../../types/Consortium';
 	import ConsortiumCard from './components/ConsortiumCard.svelte';
-	import { consortiums, myConsortiums } from './mock';
+	import { consortiumsMock, myConsortiums } from './mock';
 
 	let selected = 'all';
 	export let openModal: (index: number) => void;
@@ -39,9 +39,9 @@
 			>
 		</ButtonGroup>
 	</div>
-	<div class="grid grid-cols-6 gap-6">
+	<div class="grid grid-cols-4 gap-6">
 		{#if selected === 'all'}
-			{#each consortiums as consortium}
+			{#each consortiumsMock as consortium}
 				<ConsortiumCard {consortium} onClick={() => handleCardClick(consortium)} />
 			{/each}
 		{:else}

@@ -115,7 +115,7 @@
 					{#each spendings as spending}
 						<div class="flex w-44 flex-col gap-4 rounded-lg bg-neutral-400 p-4">
 							<Badge class="order w-fit gap-2 border-neutral-300 bg-neutral-100 py-1">
-								<Icon icon={spending.icon} height="16" />
+								<Icon icon={spending.icon} height="16" class="text-secondary-100" />
 								{spending.category}
 							</Badge>
 							<p class="text-2xl font-semibold">{spending.value}</p>
