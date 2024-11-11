@@ -26,6 +26,9 @@
 				<SidebarButton active={$active === 'loans'} href="/auth/loans"
 					><Icon icon="ic:outline-account-balance" height="20" class="mr-2" /> Empréstimos</SidebarButton
 				>
+				<SidebarButton active={$active === 'services'} href="/auth/services"
+					><Icon icon="mdi:work-outline" height="20" class="mr-2" /> Serviços</SidebarButton
+				>
 			</div>
 		</div>
 		<div class="flex w-full flex-col items-center gap-4 border-t pt-6">
