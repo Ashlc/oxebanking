@@ -4,6 +4,7 @@
 	import Container from '../../../components/Container.svelte';
 	import Layout from '../../../components/Layout.svelte';
 	import LatestTransactions from './LatestTransactions.svelte';
+	import SubContainer from '../../../components/SubContainer.svelte';
 
 	let visible = true;
 	let visibleIcon = 'mdi:eye-off-outline';
@@ -71,19 +72,19 @@
 	<div class="flex flex-row gap-6">
 		<div class="flex basis-1/2 flex-col gap-6">
 			<Container header="Saldo" icon="ic:outline-account-balance-wallet">
-				<div class="flex flex-row items-center gap-3 px-4 pb-4">
+				<SubContainer className="flex flex-row items-center gap-3">
 					{#if visible}
-						<p class="w-full text-4xl font-bold text-secondary-500">{formattedBalance}</p>
+						<p class="text-4xl font-bold text-secondary-500">{formattedBalance}</p>
 					{:else}
-						<div class="h-10 w-full rounded-lg bg-neutral-200" />
+						<div class="h-10 w-56 rounded-lg bg-neutral-200"></div>
 					{/if}
 					<Button color="light" size="sm" on:click={toggleVisibility} class="aspect-square p-2">
 						<Icon icon={visibleIcon} height="20" />
 					</Button>
-				</div>
+				</SubContainer>
 				<hr />
-				<Container header="Acesso rápido" border={false} padding={false}>
-					<div class="flex w-full flex-row gap-10 px-4 pb-4">
+				<SubContainer header="Acesso rápido">
+					<div class="flex w-full flex-row gap-10">
 						{#each quickActions as action}
 							<div class="flex flex-col items-center gap-1">
 								<Button
@@ -96,22 +97,22 @@
 							</div>
 						{/each}
 					</div>
-				</Container>
+				</SubContainer>
 			</Container>
 			<Container header="Sua fatura" icon="mdi:credit-card-outline">
-				<div class="flex flex-col gap-3 px-4 pb-4">
+				<SubContainer>
 					<p class="w-full text-4xl font-bold text-secondary-500">R$ 140,37</p>
-					<div class="flex flex-row gap-3">
+					<div class="flex flex-row gap-4">
 						<p class="text-secondary-200">Vence 14/11</p>
 						<Badge color="primary" class="gap-2" border>
 							<Icon icon="material-symbols:check" />
 							Débito automático ativo
 						</Badge>
 					</div>
-				</div>
+				</SubContainer>
 			</Container>
 			<Container header="Principais gastos este mês" icon="material-symbols:calendar-month-outline">
-				<div class="flex flex-row flex-wrap gap-4 px-4 pb-4">
+				<SubContainer className="flex flex-row flex-wrap gap-4">
 					{#each spendings as spending}
 						<div class="flex w-44 flex-col gap-4 rounded-lg bg-neutral-400 p-4">
 							<Badge class="order w-fit gap-2 border-neutral-300 bg-neutral-100 py-1">
@@ -126,7 +127,7 @@
 							</Button>
 						</div>
 					{/each}
-				</div>
+				</SubContainer>
 			</Container>
 		</div>
 		<div class="flex basis-1/2 flex-col">
