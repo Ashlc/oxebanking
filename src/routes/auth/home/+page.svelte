@@ -24,19 +24,23 @@
 	const quickActions = [
 		{
 			icon: 'ic:baseline-pix',
-			label: 'Pix'
+			label: 'Pix',
+			href: '/auth/transactions'
 		},
 		{
 			icon: 'material-symbols:credit-card',
-			label: 'Cartões'
+			label: 'Cartões',
+			href: '/auth/cards'
 		},
 		{
 			icon: 'material-symbols:barcode',
-			label: 'Pagar'
+			label: 'Pagar',
+			href: '/auth/transactions'
 		},
 		{
 			icon: 'material-symbols:send-money',
-			label: 'Transferir'
+			label: 'Transferir',
+			href: '/auth/transactions'
 		},
 		{
 			icon: 'material-symbols:place-item',
@@ -87,12 +91,14 @@
 					<div class="flex w-full flex-row gap-10">
 						{#each quickActions as action}
 							<div class="flex flex-col items-center gap-1">
-								<Button
-									color="primary"
-									class="aspect-square bg-neutral-400 p-4 text-secondary-400 transition-all hover:bg-neutral-500 active:bg-neutral-200"
-								>
-									<Icon icon={action.icon} height="24" />
-								</Button>
+								<a href={action.href}>
+									<Button
+										color="primary"
+										class="aspect-square bg-neutral-400 p-4 text-secondary-400 transition-all hover:bg-neutral-500 active:bg-neutral-200"
+									>
+										<Icon icon={action.icon} height="24" />
+									</Button>
+								</a>
 								<p class="text-sm">{action.label}</p>
 							</div>
 						{/each}

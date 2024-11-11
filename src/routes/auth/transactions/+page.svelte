@@ -25,7 +25,16 @@
 	const activeStyle = 'bg-primary-700 text-white';
 </script>
 
-<Layout root="Início" startIcon="ic:outline-explore" breadcrumbItems={['Transações']}>
+<Layout
+	root="Início"
+	startIcon="ic:outline-explore"
+	breadcrumbItems={[
+		{
+			name: 'Transações',
+			href: '/auth/transactions'
+		}
+	]}
+>
 	<div class="flex flex-row gap-6">
 		<div class="flex basis-3/4 flex-col gap-12">
 			<div class="flex flex-row items-center gap-3">
