@@ -21,7 +21,13 @@
 
 <div class="flex w-full flex-col gap-2">
 	<p class="font-semibold">Para quem você deseja pagar?</p>
-	<Input type="text" size="lg" bind:value={key} on:input={() => setKey(key)} />
+	<Input
+		type="text"
+		size="lg"
+		bind:value={key}
+		on:input={() => setKey(key)}
+		placeholder={'Chave ou Pix Copia e Cola '}
+	/>
 </div>
 <div class="flex w-full flex-col gap-2">
 	<p class="font-semibold">Favoritos</p>
