@@ -37,7 +37,7 @@
 			<div class="flex h-full basis-1/3 flex-col items-center justify-center gap-10">
 				<OxebankingLogo width={250} height={80} />
 				<form
-					class="flex w-1/2 flex-col gap-4"
+					class="flex w-full flex-col gap-4 px-2"
 					id="login-form"
 					bind:this={loginForm}
 					on:submit={handleSubmit}
@@ -69,7 +69,7 @@
 					</div>
 					<Button size="lg" class="mt-4 w-full" type="submit" form="login-form">ENTRAR</Button>
 				</form>
-				<div class="flex w-1/2 flex-col items-center gap-2">
+				<div class="flex flex-col items-center gap-2">
 					<p>Ôxe, tu não tem conta?</p>
 					<Button
 						size="lg"

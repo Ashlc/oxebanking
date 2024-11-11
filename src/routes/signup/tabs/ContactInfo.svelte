@@ -35,7 +35,7 @@
 	];
 </script>
 
-<div class="grid w-full grid-cols-6 gap-8">
+<div class="grid w-full grid-cols-6 gap-2">
 	<div class="col-span-3 flex flex-col gap-2">
 		<Label>Email</Label>
 		<Input type="email" required />

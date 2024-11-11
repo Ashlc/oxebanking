@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Input, Label, Select } from 'flowbite-svelte';
+
 	const maritalStatus = [
 		{
 			value: 'married',
@@ -35,7 +36,7 @@
 	];
 </script>
 
-<div class="grid w-full grid-cols-2 gap-8">
+<div class="grid w-full grid-cols-2 justify-between gap-4">
 	<div class="col-span-2 flex flex-col gap-2">
 		<Label>Nome completo</Label>
 		<Input type="text" required />

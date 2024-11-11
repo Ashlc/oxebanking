@@ -12,6 +12,10 @@
 	color: #332b2b;
 }
 
+body {
+	background-color: #ffffff;
+}
+
 .animated-card {
 	outline: 1px solid transparent;
 	-webkit-perspective: 1000;
