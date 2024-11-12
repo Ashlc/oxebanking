@@ -1,15 +1,37 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { Button, Select } from 'flowbite-svelte';
+	import { onMount } from 'svelte';
 	import Section from '../../../components/Section.svelte';
 
 	const currencies = [
-		{ name: '🇺🇸 Dólar estadunidense', value: 'USD', icon: 'openmoji:flag-united-states' },
-		{ name: '🇪🇺 Euro', value: 'EUR', icon: 'openmoji:flag-european-union' },
-		{ name: '🇦🇷 Pesos argentinos', value: 'ARS', icon: 'openmoji:flag-argentina' }
+		{ name: '🇺🇸 Dólar estadunidense', value: 'USD', icon: 'openmoji:flag-united-states', quote: 0, coin: '$' },
+		{ name: '🇪🇺 Euro', value: 'EUR', icon: 'openmoji:flag-european-union', quote: 0, coin: '€' },
+		{ name: '🇬🇧 Libra esterlina', value: 'GBP', icon: 'openmoji:flag-united-kingdom', quote: 0, coin: '£' },
+		{ name: '🇦🇷 Pesos argentinos', value: 'ARS', icon: 'openmoji:flag-argentina', quote: 0, coin: '$' },
+		{ name: '🇨🇦 Dólar canadense', value: 'CAD', icon: 'openmoji:flag-canada', quote: 0, coin: '$' },
+		{ name: '🇦🇺 Dólar australiano', value: 'AUD', icon: 'openmoji:flag-australia', quote: 0, coin: '$' },
+		{ name: '🇮🇱 Novo Shekel israelense', value: 'ILS', icon: 'openmoji:flag-israel', quote: 0, coin: '₪' },
+		{ name: '🇯🇵 Iene japonês', value: 'JPY', icon: 'openmoji:flag-japan', quote: 0, coin: '¥' },
+		{ name: '🇨🇿 Coroa checa', value: 'CZK', icon: 'openmoji:flag-czechia', quote: 0, coin: 'Kč' },
+		{ name: '🪙 Bitcoin', value: 'BTC', icon: 'openmoji:bitcoin', quote: 0, coin: '₿' },
+		{ name: '💲 Ethereum', value: 'ETH', icon: 'openmoji:ethereum', quote: 0, coin: 'Ξ' },
+		{ name: '💰 Litecoin', value: 'LTC', icon: 'openmoji:litecoin', quote: 0, coin: 'Ł' },
 	];
 
-	let selectedCurrency = 'USD';
+	const fetchCurrencyQuote = async (currency: string) => {
+		const response = await fetch(`https://economia.awesomeapi.com.br/json/last/${currency}-BRL`);
+		const data = await response.json();
+		return Number(data[`${currency}BRL`].ask);
+	};
+
+	onMount(async () => {
+		for (const currency of currencies) {
+			currency.quote = await fetchCurrencyQuote(currency.value);
+		}
+	});
+	
+	let selectedCurrency: string | undefined = undefined;
 
 	function handleCurrencyChange(event: Event) {
 		const target = event.target as HTMLSelectElement;
@@ -48,22 +70,28 @@
 					<p class="text-sm font-bold">Moeda atual</p>
 				</div>
 				<Select
-					bind:value={selectedCurrency}
-					items={currencies}
-					class="rounded-none rounded-r-lg border-none text-base font-medium"
-					placeholder="Selecione a moeda"
-					on:change={handleCurrencyChange}
+				bind:value={selectedCurrency}
+				items={currencies}
+				class="rounded-none rounded-r-lg border-none text-base font-medium"
+				placeholder="Selecione a moeda"
+				on:change={handleCurrencyChange}
 				/>
 			</div>
-			<div class="flex flex-col">
+			{#if !selectedCurrency}
+				<div></div>
+			{:else}
+				<div class="flex flex-col">
 				<p class="text-lg font-medium">Cotação atual:</p>
 				<div class="flex flex-row items-center gap-4">
-					<p class="text-4xl font-bold">1,00 {selectedCurrency}</p>
+					<p class="text-3xl font-bold">{currencies.find((currency) => currency.value === selectedCurrency)?.coin} 1,00 {selectedCurrency}</p>
 					<Icon icon="ic:baseline-compare-arrows" height="32" />
-					<p class="text-4xl font-bold">R$ 5,00 BRL</p>
+					{#key currencies}
+						<p class="text-3xl font-bold">{currencies.find((currency) => currency.value === selectedCurrency)?.quote.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} BRL</p>
+					{/key}
 				</div>
-				<p class="mt-2 text-sm text-secondary-100">Atualizado em 10/10/2024</p>
-			</div>
+					<p class="mt-2 text-sm text-secondary-100">Atualizado em 10/10/2024</p>
+				</div>
+			{/if}
 		</div>
 		<div class="flex grow flex-col gap-2 rounded-xl border p-4">
 			<div class="flex w-full flex-col gap-4">
