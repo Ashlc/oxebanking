@@ -3,31 +3,23 @@
 	import { Button, Input, Label, Spinner } from 'flowbite-svelte';
 	import toast from 'svelte-french-toast';
 	import OxebankingLogo from '../components/OxebankingLogo.svelte';
+	import { signIn } from '../hooks/authUser';
 
 	let loginForm: HTMLFormElement;
 
 	let fetching = false;
 
-	const submitLogin = async (data: { cpf: string; password: string }) => {
-		const api = 'https://oxebanking-middleend.onrender.com';
-		const response = await fetch(`${api}/sign-in`, {
-			method: 'POST',
-			body: JSON.stringify(data),
-		});
-		return response.json();
-	};
-
 	async function handleSubmit(event: SubmitEvent) {
 		event.preventDefault();
 		try {
 			fetching = true;
-			await submitLogin({ cpf: loginForm.cpf, password: loginForm.password });
-			loginForm.reset();
+			await signIn(loginForm.cpf, loginForm.password);
 			goto('/auth/home');
 		} catch (error) {
 			console.error(error);
 			toast.error('CPF ou senha inválidos');
 		} finally {
+			loginForm.reset();
 			fetching = false;
 		}
 	}
