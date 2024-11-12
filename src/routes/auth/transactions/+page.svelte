@@ -40,9 +40,9 @@
 			<div class="flex flex-row items-center gap-3">
 				<Icon icon="ic:outline-account-balance-wallet" height="20" />
 				{#if visible}
-					<p class="w-1/5 text-2xl font-bold text-secondary-500">{formattedBalance}</p>
+					<p class="text-2xl font-bold text-secondary-500">{formattedBalance}</p>
 				{:else}
-					<div class="h-8 w-1/5 rounded-lg bg-neutral-200"></div>
+					<div class="h-8 w-36 rounded-lg bg-neutral-200"></div>
 				{/if}
 				<Button color="light" size="sm" on:click={toggleVisibility} class="aspect-square p-2">
 					<Icon icon={visibleIcon} height="20" />

@@ -13,7 +13,10 @@
 
 <div
 	bind:this={ref}
-	class={cn('flex flex-col-reverse px-12 pb-12 sm:flex-row sm:justify-end sm:space-x-2', className)}
+	class={cn(
+		'flex w-full flex-col-reverse px-12 pb-12 sm:flex-row sm:justify-end sm:space-x-2',
+		className
+	)}
 	{...restProps}
 >
 	{@render children?.()}

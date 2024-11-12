@@ -14,7 +14,10 @@
 </script>
 
 <div
-	class={cn('flex w-full flex-col items-center justify-start gap-9 px-12', className)}
+	class={cn(
+		'flex w-full flex-col items-center justify-start gap-9 overflow-visible px-12',
+		className
+	)}
 	{...restProps}
 >
 	{@render children?.()}
