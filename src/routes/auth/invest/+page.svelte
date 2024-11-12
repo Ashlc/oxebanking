@@ -87,73 +87,75 @@
 </script>
 
 <Layout root="Início" startIcon="ic:outline-explore" breadcrumbItems={['Investimentos']}>
-	<div class="flex flex-col gap-8">
-		<Section>
-			<div class="flex flex-row items-center gap-2 text-secondary-100">
-				<Icon icon="material-symbols:trending-up" height="16" />
-				<p class="font-semibold text-secondary-200">Carteira de investimentos</p>
-			</div>
-			<div class="flex flex-row items-center gap-2">
-				<p class="w-fit text-4xl font-bold text-secondary-400">{formattedBalance}</p>
-				<Badge large class={`gap-1 border bg-white`} rounded>
-					<div
-						class={`flex flex-row items-center gap-[2px] ${rentabilityStyles[rentability.style].color}`}
-					>
-						<p class="font-semibold">{formattedRentability}</p>
-						<Icon icon={rentabilityStyles[rentability.style].icon} class="mb-[1px]" />
-					</div>
-					<span>de rendimento</span>
-				</Badge>
-			</div>
-		</Section>
-		<div class="flex flex-row gap-8">
-			<div class="flex basis-3/4 flex-col gap-12">
-				<Graph />
-			</div>
-			<div class="flex basis-1/4 flex-col gap-4">
-				<ButtonGroup>
-					<Button
-						on:click={() => (activePeriod = 'today')}
-						color={activePeriod === 'today' ? 'primary' : 'light'}
-						class="grow">Hoje</Button
-					>
-					<Button
-						on:click={() => (activePeriod = 'week')}
-						color={activePeriod === 'week' ? 'primary' : 'light'}
-						class="grow">Semana</Button
-					>
-					<Button
-						on:click={() => (activePeriod = 'month')}
-						color={activePeriod === 'month' ? 'primary' : 'light'}
-						class="grow">Mês</Button
-					>
-					<Button
-						on:click={() => (activePeriod = 'year')}
-						color={activePeriod === 'year' ? 'primary' : 'light'}
-						class="grow">Ano</Button
-					>
-				</ButtonGroup>
-				<div class="flex flex-col gap-6 rounded-lg border p-4">
-					<div>
-						<p class="text-lg font-semibold text-secondary-300">Resumo do período</p>
-						<p class="font-medium text-primary-700">13/10/2024 - 20/10/2024</p>
-					</div>
-					<div class="flex flex-col gap-2 [&>*:last-child]:border-b-0 [&>*]:border-b">
-						{#each statistics as statistic}
-							<div class="flex flex-row items-center justify-between py-1">
-								<p class="text-secondary-300">{statistic.label}</p>
-								<p class="font-semibold text-secondary-500">
-									{statistic.value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
-								</p>
-							</div>
-						{/each}
+	<div class="flex flex-col gap-12">
+		<Section classNames="gap-6">
+			<Section>
+				<div class="flex flex-row items-center gap-2 text-secondary-100">
+					<Icon icon="material-symbols:trending-up" height="16" />
+					<p class="font-semibold text-secondary-200">Carteira de investimentos</p>
+				</div>
+				<div class="flex flex-row items-center gap-2">
+					<p class="w-fit text-4xl font-bold text-secondary-400">{formattedBalance}</p>
+					<Badge large class={`gap-1 border bg-white`} rounded>
+						<div
+							class={`flex flex-row items-center gap-[2px] ${rentabilityStyles[rentability.style].color}`}
+						>
+							<p class="font-semibold">{formattedRentability}</p>
+							<Icon icon={rentabilityStyles[rentability.style].icon} class="mb-[1px]" />
+						</div>
+						<span>de rendimento</span>
+					</Badge>
+				</div>
+			</Section>
+			<div class="flex flex-row gap-8">
+				<div class="flex basis-3/4 flex-col gap-12">
+					<Graph />
+				</div>
+				<div class="flex basis-1/4 flex-col gap-4">
+					<ButtonGroup>
+						<Button
+							on:click={() => (activePeriod = 'today')}
+							color={activePeriod === 'today' ? 'primary' : 'light'}
+							class="grow">Hoje</Button
+						>
+						<Button
+							on:click={() => (activePeriod = 'week')}
+							color={activePeriod === 'week' ? 'primary' : 'light'}
+							class="grow">Semana</Button
+						>
+						<Button
+							on:click={() => (activePeriod = 'month')}
+							color={activePeriod === 'month' ? 'primary' : 'light'}
+							class="grow">Mês</Button
+						>
+						<Button
+							on:click={() => (activePeriod = 'year')}
+							color={activePeriod === 'year' ? 'primary' : 'light'}
+							class="grow">Ano</Button
+						>
+					</ButtonGroup>
+					<div class="flex flex-col gap-6 rounded-lg border p-4">
+						<div>
+							<p class="text-lg font-semibold text-secondary-300">Resumo do período</p>
+							<p class="font-medium text-sm text-primary-700">13/10/2024 - 20/10/2024</p>
+						</div>
+						<div class="flex flex-col gap-2 [&>*:last-child]:border-b-0 [&>*]:border-b">
+							{#each statistics as statistic}
+								<div class="flex flex-row items-center justify-between pt-1 pb-2">
+									<p class="text-secondary-300">{statistic.label}</p>
+									<p class="font-semibold text-secondary-500">
+										{statistic.value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+									</p>
+								</div>
+							{/each}
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</Section>
 		<Section>
 			<p class="text-lg font-bold text-secondary-300">Meus investimentos</p>
-			<div class="flex w-full flex-row gap-8">
+			<div class="flex w-full flex-row gap-4">
 				{#each investments as investment}
 					<MyInvestment {investment} />
 				{/each}
