@@ -14,6 +14,9 @@ importers:
       echarts:
         specifier: ^5.5.1
         version: 5.5.1
+      svelte-qrcode:
+        specifier: ^1.0.1
+        version: 1.0.1
     devDependencies:
       '@iconify/svelte':
         specifier: ^4.0.2
@@ -964,6 +967,9 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
+  qrious@4.0.2:
+    resolution: {integrity: sha512-xWPJIrK1zu5Ypn898fBp8RHkT/9ibquV2Kv24S/JY9VYEhMBMKur1gHVsOiNUh7PHP9uCgejjpZUHUIXXKoU/g==}
+
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
@@ -1061,6 +1067,9 @@ packages:
     peerDependencies:
       svelte: ^4.0.0 || ^5.0.0-next.0
       typescript: '>=5.0.0'
+
+  svelte-qrcode@1.0.1:
+    resolution: {integrity: sha512-l1RcxDWkQqtBWUkolYee/IHGVKSgm1I2PdF8yVoIRqzKCc3kXpCXSVsMfrMSavWW2/BXvKu5Orv+JGbrO5onsw==}
 
   svelte-toolbelt@0.4.6:
     resolution: {integrity: sha512-k8OUvXBUifHZcAlWeY/HLg/4J0v5m2iOfOhn8fDmjt4AP8ZluaDh9eBFus9lFiLX6O5l6vKqI1dKL5wy7090NQ==}
@@ -1933,6 +1942,8 @@ snapshots:
 
   prettier@3.3.3: {}
 
+  qrious@4.0.2: {}
+
   queue-microtask@1.2.3: {}
 
   read-cache@1.0.0:
@@ -2053,6 +2064,10 @@ snapshots:
       typescript: 5.6.3
     transitivePeerDependencies:
       - picomatch
+
+  svelte-qrcode@1.0.1:
+    dependencies:
+      qrious: 4.0.2
 
   svelte-toolbelt@0.4.6(svelte@5.0.5):
     dependencies:

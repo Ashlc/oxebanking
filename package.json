@@ -38,6 +38,7 @@
 	"type": "module",
 	"dependencies": {
 		"class-variance-authority": "^0.7.0",
-		"echarts": "^5.5.1"
+		"echarts": "^5.5.1",
+		"svelte-qrcode": "^1.0.1"
 	}
 }

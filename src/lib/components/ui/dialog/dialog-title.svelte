@@ -13,7 +13,7 @@
 		action,
 		...restProps
 	}: DialogPrimitive.TitleProps & {
-		icon?: Component;
+		icon?: Component | string;
 		action?: () => void;
 	} = $props();
 </script>
