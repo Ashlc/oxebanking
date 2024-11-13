@@ -27,16 +27,14 @@
 		<p class="font-semibold text-secondary-400">{investment.name}</p>
 	</div>
 	<div class="flex flex-col gap-2 p-4 text-secondary-300">
-		<div class="flex flex-row items-center justify-between">
-			<p class="font-medium">Valor investido</p>
+		<div class="flex flex-row items-center justify-between text-sm">
+			<p class="font-medium">Investimento</p>
 			<div class="flex flex-row gap-2">
-				<Badge class={`gap-1 border bg-white`} rounded>
-					<div class={`flex flex-row items-center gap-[2px] ${styles.color}`}>
-						<p class="font-semibold">{getRentabilityPercentage(investment).toFixed(2)}%</p>
+				<Badge class={`border bg-white`} rounded>
 						<Icon icon={styles.icon} class="mb-[1px]" />
-					</div>
+						<p class="font-medium">{getRentabilityPercentage(investment).toFixed(2)}%</p>
 				</Badge>
-				<p class="font-medium">
+				<p class="font-bold">
 					{investment.amount.toLocaleString('pt-BR', {
 						style: 'currency',
 						currency: 'BRL'
@@ -44,9 +42,9 @@
 				</p>
 			</div>
 		</div>
-		<div class="flex flex-row items-center justify-between">
+		<div class="flex flex-row items-center justify-between text-sm">
 			<p class="font-medium">Rendimento</p>
-			<p class="font-medium">
+			<p class="font-bold">
 				{investment.rentability.toLocaleString('pt-BR', {
 					style: 'currency',
 					currency: 'BRL'

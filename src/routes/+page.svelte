@@ -1,15 +1,27 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { Button, Input, Label } from 'flowbite-svelte';
+	import { Button, Input, Label, Spinner } from 'flowbite-svelte';
+	import toast from 'svelte-french-toast';
 	import OxebankingLogo from '../components/OxebankingLogo.svelte';
+	import { signIn } from '../hooks/authUser';
 
 	let loginForm: HTMLFormElement;
 
-	function handleSubmit(event: SubmitEvent) {
+	let fetching = false;
+
+	async function handleSubmit(event: SubmitEvent) {
 		event.preventDefault();
-		console.log(loginForm.cpf, loginForm.password);
-		loginForm.reset();
-		goto('/auth/home');
+		try {
+			fetching = true;
+			await signIn(loginForm.cpf, loginForm.password);
+			goto('/auth/home');
+		} catch (error) {
+			console.error(error);
+			toast.error('CPF ou senha inválidos');
+		} finally {
+			loginForm.reset();
+			fetching = false;
+		}
 	}
 
 	let forgotPasswordForm: HTMLFormElement;
@@ -34,10 +46,9 @@
 <div class="h-screen w-screen p-4">
 	<div class="flex h-full flex-row gap-4">
 		{#if !forgotPassword}
-			<div class="flex h-full basis-1/3 flex-col items-center justify-center gap-10">
+			<div class="flex h-full grow flex-col items-center justify-center gap-10">
 				<OxebankingLogo width={250} height={80} />
-				<form
-					class="flex w-full flex-col gap-4 px-2"
+				<form class="flex w-full flex-col gap-4 px-2"
 					id="login-form"
 					bind:this={loginForm}
 					on:submit={handleSubmit}
@@ -67,7 +78,13 @@
 							aria-label="Esqueci minha senha">Esqueci minha senha</Button
 						>
 					</div>
-					<Button size="lg" class="mt-4 w-full" type="submit" form="login-form">ENTRAR</Button>
+					<Button size="lg" class="mt-4 w-full" type="submit" form="login-form">
+						{#if fetching}
+							<Spinner size="6" />
+						{:else}
+							ENTRAR
+						{/if}
+					</Button>
 				</form>
 				<div class="flex flex-col items-center gap-2">
 					<p>Ôxe, tu não tem conta?</p>
@@ -82,7 +99,7 @@
 				</div>
 			</div>
 		{:else}
-			<div class="flex h-full basis-1/3 flex-col items-center justify-center gap-10">
+			<div class="flex h-full grow flex-col items-center justify-center gap-10">
 				<div class="flex w-1/2 flex-col gap-4">
 					<div class="-ml-3">
 						<OxebankingLogo height={80} />
@@ -108,8 +125,8 @@
 				</form>
 			</div>
 		{/if}
-		<div class="relative h-full basis-2/3 overflow-clip rounded-2xl bg-secondary-200">
-			<h2 class="absolute bottom-16 z-10 w-full text-center text-4xl font-bold text-white">
+		<div class="relative h-full hidden md:block md:basis-2/5 overflow-clip rounded-2xl bg-secondary-200 lg:basis-2/3">
+			<h2 class="absolute bottom-16 z-10 w-full max-lg:ml-6 max-lg:text-left lg:text-center text-xl font-bold text-white lg:text-4xl">
 				Do nordeste para o Brasil. <br />
 				Há mais de 5 anos.
 			</h2>
