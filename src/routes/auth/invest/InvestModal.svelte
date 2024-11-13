@@ -1,12 +1,14 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
-	import { Button, Modal, Radio } from 'flowbite-svelte';
+	import { Button, Modal } from 'flowbite-svelte';
 	import Section from '../../../components/Section.svelte';
 	import { investmentTypes, type InvestmentType } from './investments';
 
 	export let open: boolean = false;
 	export let type: InvestmentType | undefined;
 	export let onClose: () => void;
+	
+	let selectedOption: string;
 </script>
 
 <Modal bind:open on:close={onClose} autoclose outsideclose bodyClass="p-0">
@@ -21,19 +23,16 @@
 			</p>
 		{/if}
 	</Section>
-	<Section classNames="px-2 [&:last-child]:border-b-0 [&>*]:border-b">
+	<Section classNames="[&:last-child]:border-b-0 [&>*]:border-b gap-0">
 		{#if type}
 			{#each investmentTypes[type].options as option}
-				<div class="flex flex-row items-center justify-between p-4">
-					<div class="flex flex-col">
+					<button class="flex flex-col w-full items-start py-4 px-6 hover:bg-gray-100">
 						<p class="text-lg font-bold text-secondary-300">{option.title}</p>
-						<p class="text-secondary-100">
+						<p class="text-secondary-200">
 							Rende <span class="font-bold">{option.rentability}</span> do CDI
 						</p>
 						<p class="text-sm font-normal text-secondary-100">{option.period}</p>
-					</div>
-					<Radio value={option.title} name="investment-type" />
-				</div>
+					</button>
 			{/each}
 		{/if}
 	</Section>
