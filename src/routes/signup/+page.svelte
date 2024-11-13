@@ -33,13 +33,13 @@
 	};
 </script>
 
-<div class="relative h-screen w-screen overflow-clip bg-secondary-200">
-	<div class="image-1 h-full w-full opacity-40"></div>
+<div class="relative h-screen w-screen overflow-y-auto bg-secondary-200">
+	<div class="image-1 fixed h-full w-full opacity-40"></div>
 	<div
-		class="absolute left-1/2 top-1/2 h-screen w-10/12 -translate-x-1/2 -translate-y-1/2 px-48 py-24"
+		class="absolute left-1/2 top-1/2 max-h-[calc(100vh-128px)] w-full -translate-x-1/2 -translate-y-1/2"
 	>
-		<div class="flex h-full w-full flex-row gap-16 rounded-xl bg-white p-16">
-			<div class="flex h-full w-[480px] flex-col justify-center gap-8">
+		<div class="mx-auto mb-16 flex h-full w-4/5 flex-row gap-16 rounded-xl bg-white p-16 lg:w-3/5">
+			<div class="flex h-full flex-col justify-center gap-8">
 				<div class="-ml-4">
 					<OxebankingLogo height={52} />
 				</div>
@@ -51,7 +51,7 @@
 					</p>
 				</div>
 			</div>
-			<div class="flex h-full w-full flex-col justify-between">
+			<div class="flex h-full w-full flex-col justify-between gap-6">
 				<Stepper {currentStep} {steps} {handleStepClick} />
 				<form id="signup-form" class="w-full" bind:this={signupForm} on:submit={handleSubmit}>
 					{#if currentStep === 1}

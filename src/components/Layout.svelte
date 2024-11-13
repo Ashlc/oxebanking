@@ -1,7 +1,10 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { Breadcrumb, BreadcrumbItem, Dropdown, DropdownItem } from 'flowbite-svelte';
-	export let breadcrumbItems: string[] = [];
+	export let breadcrumbItems: {
+		name: string;
+		href: string;
+	}[] = [];
 	export let root: string = '';
 	export let startIcon: string = '';
 	export let user = { name: 'Fernando Marques' };
@@ -11,12 +14,12 @@
 <div class="flex h-full w-full flex-col rounded-xl border bg-white">
 	<div class="flex h-[105px] flex-row items-center justify-between border-b px-10">
 		<Breadcrumb>
-			<BreadcrumbItem href="#" home>
+			<BreadcrumbItem href="/auth/home" home>
 				<Icon icon={startIcon} height="20" class="mr-2" slot="icon" />
 				{root}
 			</BreadcrumbItem>
 			{#each breadcrumbItems as item}
-				<BreadcrumbItem href="#">{item}</BreadcrumbItem>
+				<BreadcrumbItem href={item.href}>{item.name}</BreadcrumbItem>
 			{/each}
 		</Breadcrumb>
 		<button

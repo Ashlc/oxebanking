@@ -15,6 +15,10 @@
 		Manter a segurança da sua senha é essencial para proteger sua conta e seus dados. Evite senhas
 		comuns ou fáceis de adivinhar.
 	</p>
+	<p class="font-medium">
+		Manter a segurança da sua senha é essencial para proteger sua conta e seus dados. Evite senhas
+		comuns ou fáceis de adivinhar.
+	</p>
 	<div class="flex flex-col gap-2">
 		<Label>Senha</Label>
 		<Input type="password" required size="lg" />

@@ -48,8 +48,7 @@
 		{#if !forgotPassword}
 			<div class="flex h-full grow flex-col items-center justify-center gap-10">
 				<OxebankingLogo width={250} height={80} />
-				<form
-					class="flex w-2/3 flex-col gap-4 lg:w-1/2"
+				<form class="flex w-full flex-col gap-4 px-2"
 					id="login-form"
 					bind:this={loginForm}
 					on:submit={handleSubmit}
@@ -87,7 +86,7 @@
 						{/if}
 					</Button>
 				</form>
-				<div class="flex w-2/3 flex-col items-center gap-2 lg:w-1/2">
+				<div class="flex flex-col items-center gap-2">
 					<p>Ôxe, tu não tem conta?</p>
 					<Button
 						size="lg"

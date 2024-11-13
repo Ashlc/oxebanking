@@ -1,7 +1,19 @@
-<script>
+<script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { Button } from 'flowbite-svelte';
-	import pixImg from './../../../../assets/qrcode.png';
+
+	/* @ts-ignore */
+	import QrCode from 'svelte-qrcode';
+
+	import * as Dialog from '$lib/components/ui/dialog/index.js';
+	import { Input, Label } from 'flowbite-svelte';
+
+	let pixValue = '';
+	let isModalOpen = false;
+
+	const closeModal = () => {
+		isModalOpen = false;
+	};
 
 	const keys = ['mail@example.com', '99 99999-9999', '000.000.000-00'];
 </script>
@@ -15,12 +27,42 @@
 		<div
 			class="flex aspect-square w-full flex-col items-center justify-center rounded-md border p-4"
 		>
-			<img src={pixImg} alt="QR Code" class="w-full" />
+			<QrCode
+				value={`00020101021226850014br.gov.bcb.pix0136${pixValue}52040000530398654041.005802BR5902BR97`}
+			/>
 		</div>
-		<Button color="alternative" class="w-full gap-2">
-			<Icon icon="ph:numpad" />
-			Personalizar valor
-		</Button>
+		<Dialog.Root open={isModalOpen} controlledOpen={true}>
+			<Dialog.Trigger>
+				<Button
+					color="alternative"
+					class="w-full gap-2"
+					on:click={() => {
+						isModalOpen = true;
+					}}
+				>
+					<Icon icon="ph:numpad" />
+					Personalizar valor
+				</Button>
+			</Dialog.Trigger>
+			<Dialog.Content>
+				<Dialog.Header>
+					<Dialog.Title icon={'mdi:qrcode'}>Personalizar valor</Dialog.Title>
+				</Dialog.Header>
+
+				<Dialog.Holder>
+					<div class="flex w-full flex-col gap-4">
+						<Label for="value">Valor</Label>
+						<Input id="value" type="text" placeholder="R$ 0,00" bind:value={pixValue} />
+					</div>
+				</Dialog.Holder>
+
+				<Dialog.Footer>
+					<Button class="w-full gap-2 transition-all" size="lg" on:click={closeModal}>
+						Personalizar valor
+					</Button>
+				</Dialog.Footer>
+			</Dialog.Content>
+		</Dialog.Root>
 	</div>
 	<div class="flex w-full flex-col gap-3">
 		<div class="text-secondary-3200 flex w-full flex-row items-center gap-2">

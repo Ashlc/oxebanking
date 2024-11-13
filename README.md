@@ -41,13 +41,13 @@ Um projeto de um banco digital fictício, desenvolvido para a matéria Conceitos
 ## 🚧 Roadmap
 
 - [x] Implementar o esqueleto/layout do projeto
-- [ ] Implementar a autenticação
-- [ ] Implementar a home
-- [ ] Implementar a página de transações
-- [ ] Implementar a página de cartões
-- [ ] Implementar a página de investimentos
-- [ ] Implementar a página de serviços (câmbio, seguros, consórcios)
-- [ ] Implementar a página de empréstimos
+- [x] Implementar a autenticação
+- [x] Implementar a home
+- [x] Implementar a página de transações
+- [x] Implementar a página de cartões
+- [x] Implementar a página de investimentos
+- [x] Implementar a página de serviços (câmbio, seguros, consórcios)
+- [x] Implementar a página de empréstimos
 
 <br />
 
@@ -71,7 +71,7 @@ cd oxebanking
 pnpm install
 ```
 
-> [NOTE]  
+> [!NOTE]  
 > Para o gerenciamento de dependências, recomendamos o uso do `pnpm` por sua disponibilidade em todas as principais plataformas (Windows, Linux e Mac) e sua velocidade quando comparado ao `npm` tradicional.  
 Caso o `pnpm` não esteja instalado, é possível [https://pnpm.io/installation](baixá-lo aqui).
 
